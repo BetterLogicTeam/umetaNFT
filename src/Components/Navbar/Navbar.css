@@ -1,0 +1,33 @@
+.nav-link:hover {
+  color: #0a58ca !important;
+}
+#patti-logo {
+  width: 800px;
+  /* border: 2px solid red; */
+}
+.resNav {
+  /* display: none; */
+}
+@media (min-width: 280px) and (max-width: 768px) {
+  .resNav {
+    margin-top: 15px;
+    display: block;
+  }
+
+  .accoutadd {
+    margin-top: 15px;
+    margin-right: 10px;
+    float: right;
+  }
+  #patti-logo {
+    width: 300px;
+    /* border: 2px solid red; */
+  }
+  .banner-content__title{
+    font-size: 14px !important;
+    margin-top: 1rem;
+  }
+  .btn.btn--lg, .cmn--btn.btn--lg {
+    font-size: 12px !important;
+}
+}
