@@ -14,7 +14,7 @@ import { loadWeb3 } from "../../apis/api";
 import Spinner from "../../Components/Spinner_here/Spinner";
 import logo from "../assets/images/game/spinersmall.png";
 import { useSelector } from "react-redux";
-function Betting({ Card_props, setCard_props ,setBetData}) {
+function Betting({ Card_props, setCard_props, setBetData, setUpdate }) {
   let { provider, acc, providerType, web3 } = useSelector(
     (state) => state.connectWallet
   );
@@ -67,9 +67,9 @@ function Betting({ Card_props, setCard_props ,setBetData}) {
               });
             const { card, token_URI } = data.events.BetAmount.returnValues;
             setBetData({
-              cardno:card,
-              src:token_URI
-            })
+              cardno: card,
+              src: token_URI,
+            });
             console.log("retured data", card, token_URI);
             setGetData("");
 
@@ -113,9 +113,12 @@ function Betting({ Card_props, setCard_props ,setBetData}) {
         } else {
           setWithdrawbtn("Please Wait While Processing");
 
+          Card_props.sort((a, b) => a - b);
+
           await contractAcc.methods.withdraw(Card_props).send({
             from: acc,
           });
+          setUpdate(true);
           toast.success("Withdraw Successful");
           setWithdrawbtn("Withdrawal");
 

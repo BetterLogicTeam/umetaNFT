@@ -14,7 +14,7 @@ import Web3 from "web3";
 import { loadWeb3 } from "../../apis/api";
 import { useSelector } from "react-redux";
 
-export default function Cards({ setCard_props, betData }) {
+export default function Cards({ setCard_props, betData, update }) {
   let { provider, acc, providerType, web3 } = useSelector(
     (state) => state.connectWallet
   );
@@ -169,27 +169,15 @@ export default function Cards({ setCard_props, betData }) {
           let obj = {};
 
           obj.src = firstArray[i];
-          console.log("obj.src", typeof firstArray);
 
           obj.cardno = secondArray[i];
-          // console.log("obj.src", (obj.cardno = secondArray[i]));
 
-          obj.amount = thirdArray[i];
-          // console.log("obj.src", (obj.amount = thirdArray[i]));
-          console.log("myobj", obj["amount"], obj["src"]);
-          // console.log("first Array", firstArray[i]);
-          // console.log("second Array", secondArray[i]);
-          // console.log("third Array", thirdArray[i]);
+          obj.amount = web3.utils.fromWei(thirdArray[i]);
+
           userDetailData.push(obj);
         }
-        console.log("userdetail", userDetailData);
         setUserCollections(userDetailData);
         setgetId();
-
-        // setInterval(() => {
-
-        // }
-        //     , 1000)
       }
     } catch (error) {
       console.log("Error while Get Cards ", error);
@@ -201,32 +189,19 @@ export default function Cards({ setCard_props, betData }) {
     let change_Color = document.getElementById(id);
     change_Color.style.border = `10px solid red`;
     change_Color.style.borderRadius = "35px";
-    console.log("Chang color", change_Color);
+    console.log("id", id);
     let check = [...cardIndex, id];
 
     check = check.map(Number);
+    console.log("check", check);
 
     setcardIndex(check);
   };
   setCard_props(cardIndex);
-  let tt;
-  // tt = setInterval(() => {
-  //   userInfo();
-  // }, 10000);
-  // useEffect(() => {
-  //   tt = setInterval(() => {
-  //     userInfo();
-  //   }, 10000);
-  //   // }, []);
-  // }, [acc]);
-  useEffect(() => {
-    try {
-      return () => clearInterval(tt);
-    } catch (error) {}
-  }, []);
+
   useEffect(() => {
     userCollection();
-  });
+  }, [acc, betData, update]);
 
   return (
     <section class="game-section padding-top padding-bottom bg_img bg_img1">
@@ -292,8 +267,10 @@ export default function Cards({ setCard_props, betData }) {
                         <div class="game-inner">
                           <div class="game-item__thumb ">
                             <img src={item.src} alt="game" />
-                            <div class="game-item__content">
-                              {/* <h4 class="title"> {item_id.Cname} </h4> */}
+                            <div class="">
+                              <h6 class=" text-center">
+                                Reward:{item?.amount}
+                              </h6>
                             </div>
                           </div>
                         </div>

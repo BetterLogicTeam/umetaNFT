@@ -8,6 +8,8 @@ import Footer from "../Footer/Footer";
 
 function Home() {
   const [Card_props, setCard_props] = useState([]);
+  const [update, setUpdate] = useState("");
+
   const [betData, setBetData] = useState({
     cardno: "",
     src: "",
@@ -18,11 +20,12 @@ function Home() {
     <div>
       <NavbarCustom />
       <Welcome />
-      <Cards setCard_props={setCard_props} betData={betData} />
+      <Cards setCard_props={setCard_props} betData={betData} update={update} />
       <Betting
         Card_props={Card_props}
         setCard_props={setCard_props}
         setBetData={setBetData}
+        setUpdate={setUpdate}
       />
 
       <Footer />
