@@ -90,7 +90,7 @@ const NavbarCustom = () => {
                   className="banner-content__title"
                   style={{ fontSize: "25px", color: "#fff" }}
                 >
-                  BL TEN CARD GAME
+                  UBET GAME
                 </h1>
               </div>
               <div className="button-wrapper d-flex">
