@@ -47,7 +47,7 @@ function Betting({ Card_props, setCard_props, setBetData, setUpdate }) {
           uMetaNftGameContract
         );
 
-        if (bet_getdata >= 100 && bet_getdata <= 25000) {
+        if (Number(bet_getdata) >= Number(100) && Number(bet_getdata) <= Number(25000)) {
           if (bet_getdata < mybalance) {
             setIsLoading("Please Wait While Processing.");
             await tokenapp.methods
@@ -139,12 +139,12 @@ function Betting({ Card_props, setCard_props, setBetData, setUpdate }) {
   const balanceOf = async () => {
     if (acc != null) {
       const webSupply = new Web3(
-        "https://data-seed-prebsc-1-s3.binance.org:8545/"
+        "https://bsc-testnet.publicnode.com"
       );
       let tokenBalane = new webSupply.eth.Contract(tokeAbi, tokenAddress);
       let Balance_here = await tokenBalane.methods.balanceOf(acc).call();
       tokenBalane = webSupply.utils.fromWei(Balance_here);
-
+console.log(tokenBalane,"tokenBalane");
       setMybalance(parseInt(tokenBalane));
     }
   };
