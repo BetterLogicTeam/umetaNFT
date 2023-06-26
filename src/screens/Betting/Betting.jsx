@@ -37,7 +37,7 @@ function Betting({ Card_props, setCard_props, setBetData, setUpdate }) {
         toast.error("No Address");
       } else {
         const webSupply = new Web3(
-          "https://data-seed-prebsc-1-s1.binance.org:8545"
+          "https://bsc-testnet.publicnode.com"
         );
 
         let tokenapp = new web3.eth.Contract(tokeAbi, tokenAddress);

@@ -10,7 +10,7 @@ const networks = {
       symbol: "tBNB",
       decimals: 18,
     },
-    rpcUrls: ["https://data-seed-prebsc-1-s3.binance.org:8545/"],
+    rpcUrls: ["https://bsc-testnet.publicnode.com"],
     blockExplorerUrls: ["https://testnet.bscscan.com/"],
   },
 };

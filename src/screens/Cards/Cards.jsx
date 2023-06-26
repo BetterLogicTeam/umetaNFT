@@ -94,7 +94,7 @@ export default function Cards({ setCard_props, betData, update }) {
       // let acc=await loadWeb3()
       if (acc != null) {
         const webSupply = new Web3(
-          "https://data-seed-prebsc-1-s1.binance.org:8545"
+          "https://bsc-testnet.publicnode.com"
         );
 
         console.log("acc", acc);
@@ -148,7 +148,7 @@ export default function Cards({ setCard_props, betData, update }) {
       // let acc=await loadWeb3()
       if (acc != null) {
         const webSupply = new Web3(
-          "https://data-seed-prebsc-1-s1.binance.org:8545"
+          "https://bsc-testnet.publicnode.com"
         );
 
         let umetaNft = new web3.eth.Contract(

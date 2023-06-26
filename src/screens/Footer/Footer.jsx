@@ -10,7 +10,7 @@ export default function Footer(props) {
             <div class="logo mb-3 mb-md-0"></div>
             <ul class="footer-links d-flex flex-wrap justify-content-center">
               <li>
-                <a href="#"> Game RBLs</a>
+                <a href="#"> Game Rules</a>
               </li>
               <li>
                 <a href="#">| &nbsp; Disclaimer</a>
@@ -32,10 +32,10 @@ export default function Footer(props) {
               class="copyright text-white"
               style={{ fontFamily: "Font Awesome 5 Free" }}
             >
-              © Copyright BL GAME 2022 &nbsp;
+              © Copyright UMETA GAME 2023 &nbsp;
               <a
                 target="_blank"
-                href="https://bscscan.com/address/0x10393D8a07621e7B7c48E36C41c72ceBC0A6b3D6#readContract"
+                href="https://testnet.bscscan.com/address/0xC33293631F4F1FB81dF5b4Cfd85945c7ee2868Fb"
                 style={{ color: "#fff", fontweight: "bold" }}
               >
                 Smart Contract{" "}
